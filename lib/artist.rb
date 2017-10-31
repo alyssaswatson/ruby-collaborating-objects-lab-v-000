@@ -40,6 +40,6 @@ class Artist
 
   def self.create(name)
     self.new(name).tap {|artist| artist.save}
-  end    
+  end
 
 end
