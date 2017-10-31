@@ -7,10 +7,9 @@ class MP3Importer
   end
 
   def files
-    @files = Dir.glob("#{path}/*.mp3").each do |file|
-      file_array = files.split(" - ")
-      @files << file_array[1]
-    end
+    @files = Dir.glob("#{path}/*.mp3").collect {|filename|
+      filename.gsub("#{path}/", "")}
+   end
   end
 
 end
